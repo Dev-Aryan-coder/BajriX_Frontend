@@ -1,0 +1,57 @@
+@import "tailwindcss";
+
+/* BajriX Design Tokens from bajrix-identity.html */
+:root {
+  box-sizing: border-box;
+
+  /* Brand Palette - Construction Yard Theme */
+  --concrete: #EDEAE2;
+  --rebar: #221E1A;
+  --oxide: #A8412C;
+  --steel: #3E5065;
+  --amber: #E4A430;
+  --sage: #5C7A5A;
+
+  --background: var(--concrete);
+  --foreground: var(--rebar);
+  --primary: var(--oxide);
+  --primary-foreground: #FBF7F0;
+  --secondary: var(--steel);
+  --secondary-foreground: #FBF7F0;
+  --accent: var(--amber);
+  --accent-foreground: var(--rebar);
+  --success: var(--sage);
+  --success-foreground: #FBF7F0;
+  --muted: #DCD7CB;
+  --muted-foreground: #6B6459;
+  --border: #CFC9BB;
+  --radius: 4px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Space Grotesk', 'Inter', sans-serif;
+  font-weight: 700;
+  color: var(--foreground);
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+}
+
+input, select, textarea {
+  font-family: inherit;
+}

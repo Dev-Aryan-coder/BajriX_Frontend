@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <!-- 3 listing bars — same as the Navbar logo mark -->
+  <!-- Short bar: Oxide red -->
+  <rect x="8" y="24" width="12" height="29" rx="2" fill="#A8412C"/>
+  <!-- Tall bar: Steel blue -->
+  <rect x="26" y="10" width="12" height="43" rx="2" fill="#3E5065"/>
+  <!-- Medium bar: Amber -->
+  <rect x="44" y="18" width="12" height="35" rx="2" fill="#E4A430"/>
+  <!-- Baseline -->
+  <rect x="4" y="53" width="56" height="3" rx="1.5" fill="#221E1A"/>
+</svg>

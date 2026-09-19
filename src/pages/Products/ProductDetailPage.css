@@ -1,0 +1,232 @@
+/* ProductDetailPage.css */
+
+.pdp-page {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem 4rem;
+}
+
+.pdp-back-btn {
+  background: none;
+  border: none;
+  color: var(--primary);
+  font-family: inherit;
+  font-size: 0.9rem;
+  cursor: pointer;
+  padding: 0;
+  margin-bottom: 1.5rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  transition: opacity 0.2s;
+}
+
+.pdp-back-btn:hover { opacity: 0.7; }
+
+/* Product header */
+.pdp-header {
+  margin-bottom: 2.5rem;
+}
+
+.pdp-category-badge {
+  display: inline-block;
+  background: var(--primary);
+  color: #fff;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding: 0.3rem 0.9rem;
+  border-radius: 999px;
+  margin-bottom: 0.75rem;
+}
+
+.pdp-product-name {
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--foreground);
+  margin: 0 0 0.5rem;
+}
+
+.pdp-product-desc {
+  font-size: 1rem;
+  color: var(--muted-foreground);
+  margin: 0;
+  line-height: 1.6;
+  max-width: 640px;
+}
+
+/* Listings section */
+.pdp-listings-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--foreground);
+  margin-bottom: 1rem;
+}
+
+/* Comparison table */
+.pdp-table-wrapper {
+  background: var(--card);
+  border: 1.5px solid var(--border);
+  border-radius: 14px;
+  overflow: hidden;
+}
+
+.pdp-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.pdp-table thead tr {
+  background: var(--background);
+  border-bottom: 2px solid var(--border);
+}
+
+.pdp-table th {
+  padding: 1rem 1.25rem;
+  text-align: left;
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--muted-foreground);
+}
+
+.pdp-table tbody tr {
+  border-bottom: 1px solid var(--border);
+  transition: background 0.15s;
+}
+
+.pdp-table tbody tr:last-child {
+  border-bottom: none;
+}
+
+.pdp-table tbody tr:hover {
+  background: rgba(var(--primary-rgb, 130, 80, 255), 0.04);
+}
+
+.pdp-table td {
+  padding: 1rem 1.25rem;
+  font-size: 0.95rem;
+  color: var(--foreground);
+}
+
+/* Best price row highlight */
+.pdp-best-price {
+  background: rgba(var(--secondary-rgb, 62, 80, 101), 0.06);
+}
+
+.pdp-seller-name {
+  font-weight: 600;
+}
+
+.pdp-best-badge {
+  display: inline-block;
+  background: #16a34a;
+  color: #fff;
+  font-size: 0.68rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  padding: 0.15rem 0.5rem;
+  border-radius: 999px;
+  margin-top: 0.2rem;
+}
+
+/* Seller Status Badges */
+.pdp-status-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  padding: 0.2rem 0.6rem;
+  border-radius: 999px;
+  text-transform: uppercase;
+}
+
+.pdp-status-approved {
+  background: rgba(16, 185, 129, 0.12);
+  color: #059669;
+  border: 1px solid rgba(16, 185, 129, 0.25);
+}
+
+.pdp-status-pending {
+  background: rgba(245, 158, 11, 0.12);
+  color: #d97706;
+  border: 1px solid rgba(245, 158, 11, 0.25);
+}
+
+.pdp-status-rejected {
+  background: rgba(239, 68, 68, 0.12);
+  color: #dc2626;
+  border: 1px solid rgba(239, 68, 68, 0.25);
+}
+
+.pdp-price-cell {
+  font-weight: 700;
+  font-size: 1.05rem;
+  color: var(--secondary) !important;
+}
+
+.pdp-out-of-stock {
+  color: #ef4444;
+  font-size: 0.85rem;
+}
+
+.pdp-table-note {
+  font-size: 0.78rem;
+  color: var(--muted-foreground);
+  padding: 0.75rem 1.25rem;
+  border-top: 1px solid var(--border);
+  margin: 0;
+  background: var(--background);
+}
+
+/* Empty state */
+.pdp-empty {
+  text-align: center;
+  padding: 4rem 1rem;
+  background: var(--card);
+  border: 1.5px solid var(--border);
+  border-radius: 14px;
+  color: var(--muted-foreground);
+}
+
+.pdp-empty-icon { font-size: 2.5rem; margin-bottom: 0.75rem; }
+
+.pdp-empty h3 {
+  font-size: 1.1rem;
+  color: var(--foreground);
+  margin-bottom: 0.4rem;
+}
+
+/* Error state */
+.pdp-error {
+  text-align: center;
+  padding: 3rem 1rem;
+  color: #ef4444;
+}
+
+/* Skeleton */
+.pdp-skeleton-header {
+  height: 120px;
+  border-radius: 12px;
+  background: var(--card);
+  margin-bottom: 2rem;
+  animation: shimmer 1.4s infinite;
+}
+
+.pdp-skeleton-table {
+  height: 300px;
+  border-radius: 12px;
+  background: var(--card);
+  animation: shimmer 1.4s infinite;
+}
+
+@keyframes shimmer {
+  0% { opacity: 0.6; }
+  50% { opacity: 1; }
+  100% { opacity: 0.6; }
+}

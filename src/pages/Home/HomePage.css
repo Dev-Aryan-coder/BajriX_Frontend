@@ -1,0 +1,324 @@
+/* HomePage Styles */
+.home-page {
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+}
+
+/* Hero Section */
+.home-hero {
+  padding: 64px 24px 48px;
+  background: radial-gradient(circle at top left, #F5F3EC 0%, var(--concrete) 100%);
+  border-bottom: 1px solid var(--border);
+}
+
+.home-hero-content {
+  max-width: 860px;
+  margin: 0 auto;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.badge-tagline {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background-color: #FFFFFF;
+  border: 1px solid var(--border);
+  padding: 6px 14px;
+  border-radius: 9999px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--rebar);
+  margin-bottom: 20px;
+}
+
+.home-hero-title {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 46px;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  color: var(--rebar);
+  margin-bottom: 16px;
+}
+
+.highlight-text {
+  color: var(--primary); /* Oxide Red */
+}
+
+.home-hero-desc {
+  font-size: 17px;
+  color: var(--muted-foreground);
+  max-width: 620px;
+  margin-bottom: 32px;
+  line-height: 1.6;
+}
+
+/* Search Form */
+.home-search-form {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  max-width: 680px;
+  background-color: #FFFFFF;
+  border: 2px solid var(--border);
+  border-radius: var(--radius);
+  padding: 6px 6px 6px 16px;
+  box-shadow: 0 4px 20px rgba(34, 30, 26, 0.06);
+  transition: border-color 0.2s ease;
+}
+
+.home-search-form:focus-within {
+  border-color: var(--primary);
+}
+
+.search-icon {
+  color: var(--muted-foreground);
+  flex-shrink: 0;
+  margin-right: 12px;
+}
+
+.home-search-input {
+  flex: 1;
+  border: none;
+  outline: none;
+  font-size: 15px;
+  color: var(--foreground);
+  background: transparent;
+}
+
+.home-search-btn {
+  background-color: var(--accent); /* Site Amber */
+  color: var(--rebar);
+  font-weight: 700;
+  font-size: 14px;
+  padding: 12px 24px;
+  border: none;
+  border-radius: var(--radius);
+  cursor: pointer;
+  transition: opacity 0.2s ease;
+}
+
+.home-search-btn:hover {
+  opacity: 0.9;
+}
+
+/* Category Chips */
+.category-chips {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 24px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.category-chips-label {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--muted-foreground);
+}
+
+.category-chip {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--foreground);
+  background-color: #FFFFFF;
+  border: 1px solid var(--border);
+  padding: 6px 14px;
+  border-radius: 9999px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.category-chip:hover {
+  border-color: var(--primary);
+  color: var(--primary);
+}
+
+.category-chip.active {
+  background-color: var(--rebar);
+  color: var(--concrete);
+  border-color: var(--rebar);
+}
+
+/* Catalogue Section */
+.catalogue-section {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 24px 64px;
+  width: 100%;
+}
+
+.catalogue-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 28px;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.section-title {
+  font-size: 26px;
+  font-weight: 700;
+  color: var(--rebar);
+  margin-bottom: 4px;
+}
+
+.section-subtitle {
+  font-size: 14.5px;
+  color: var(--muted-foreground);
+}
+
+.btn-clear-filter {
+  background: none;
+  border: 1px dashed var(--border);
+  padding: 6px 12px;
+  border-radius: var(--radius);
+  font-size: 12.5px;
+  cursor: pointer;
+  color: var(--primary);
+}
+
+/* Products Grid */
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 24px;
+}
+
+.product-card {
+  background-color: #FFFFFF;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  cursor: pointer;
+}
+
+.product-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 24px rgba(34, 30, 26, 0.08);
+  border-color: var(--oxide);
+}
+
+.product-category-tag {
+  align-self: flex-start;
+  font-size: 11.5px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--secondary);
+  background-color: #F0F4F8;
+  padding: 4px 8px;
+  border-radius: 2px;
+  margin-bottom: 12px;
+}
+
+.product-title {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--rebar);
+  margin-bottom: 8px;
+  line-height: 1.3;
+}
+
+.product-description {
+  font-size: 13.5px;
+  color: var(--muted-foreground);
+  margin-bottom: 20px;
+  flex-grow: 1;
+  line-height: 1.5;
+}
+
+.product-footer {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  border-top: 1px solid var(--border);
+  padding-top: 14px;
+}
+
+.price-label {
+  font-size: 11px;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: var(--muted-foreground);
+  letter-spacing: 0.04em;
+}
+
+.product-price {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--primary); /* Oxide Red */
+}
+
+.product-sellers-count {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--secondary);
+  background: #F4F6F8;
+  padding: 4px 10px;
+  border-radius: 9999px;
+}
+
+/* State Cards (Loading, Empty, Error) */
+.state-card {
+  text-align: center;
+  padding: 64px 24px;
+  background-color: #FFFFFF;
+  border: 1px dashed var(--border);
+  border-radius: var(--radius);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+
+.spinner {
+  width: 40px;
+  height: 40px;
+  border: 4px solid var(--border);
+  border-top-color: var(--primary);
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.error-state {
+  border-color: #F87171;
+  background-color: #FEF2F2;
+}
+
+.error-state h3 {
+  color: #DC2626;
+}
+
+.btn-retry {
+  background-color: var(--rebar);
+  color: #FFFFFF;
+  border: none;
+  padding: 8px 18px;
+  border-radius: var(--radius);
+  font-weight: 600;
+  cursor: pointer;
+}
+
+@media (max-width: 640px) {
+  .home-hero-title {
+    font-size: 32px;
+  }
+}

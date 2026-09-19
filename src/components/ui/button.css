@@ -1,0 +1,4 @@
+/* Button specific styles */
+button:active {
+  transform: translateY(1px);
+}

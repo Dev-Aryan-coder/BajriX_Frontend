@@ -1,0 +1,326 @@
+/* AddListingPage.css */
+
+.add-listing-page {
+  max-width: 780px;
+  margin: 0 auto;
+  padding: 2.5rem 1.5rem 5rem;
+  color: var(--foreground);
+}
+
+.add-listing-header {
+  margin-bottom: 2rem;
+}
+
+.btn-back {
+  background: none;
+  border: none;
+  color: var(--primary);
+  font-family: inherit;
+  font-size: 0.92rem;
+  font-weight: 600;
+  cursor: pointer;
+  padding: 0;
+  margin-bottom: 0.75rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  transition: opacity 0.2s;
+}
+
+.btn-back:hover {
+  opacity: 0.8;
+}
+
+.add-listing-title {
+  font-size: 2rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: var(--foreground);
+  margin-bottom: 0.35rem;
+}
+
+.add-listing-sub {
+  color: var(--muted-foreground);
+  font-size: 0.95rem;
+}
+
+/* Form layout */
+.add-listing-form {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.form-section {
+  background: var(--card, #ffffff);
+  border: 1px solid var(--border, #e2e8f0);
+  border-radius: var(--radius, 16px);
+  padding: 1.75rem 2rem;
+  box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.04);
+}
+
+.form-section-title {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--foreground);
+  margin-bottom: 0.35rem;
+}
+
+.form-section-sub {
+  color: var(--muted-foreground);
+  font-size: 0.9rem;
+  margin-bottom: 1.25rem;
+}
+
+/* Autocomplete field */
+.autocomplete-wrapper {
+  position: relative;
+  width: 100%;
+}
+
+.search-field {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.suggestions-dropdown {
+  position: absolute;
+  top: calc(100% + 4px);
+  left: 0;
+  right: 0;
+  background: var(--card, #ffffff);
+  border: 1px solid var(--border, #e2e8f0);
+  border-radius: var(--radius, 12px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+  z-index: 50;
+  list-style: none;
+  padding: 0.5rem 0;
+  margin: 0;
+  max-height: 280px;
+  overflow-y: auto;
+}
+
+.suggestion-item {
+  padding: 0.75rem 1.25rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  transition: background-color 0.15s;
+}
+
+.suggestion-item:hover {
+  background: var(--muted, #f1f5f9);
+}
+
+.suggestion-name {
+  font-weight: 600;
+  color: var(--foreground);
+  font-size: 0.95rem;
+}
+
+.suggestion-cat {
+  background: rgba(224, 86, 36, 0.1);
+  color: var(--primary);
+  font-size: 0.78rem;
+  padding: 0.2rem 0.55rem;
+  border-radius: 9999px;
+  font-weight: 600;
+}
+
+.suggestion-add-new {
+  border-top: 1px solid var(--border, #e2e8f0);
+  margin-top: 0.35rem;
+  padding-top: 0.75rem;
+  color: var(--primary);
+  font-weight: 600;
+}
+
+/* Picked product card */
+.picked-product-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: var(--radius, 12px);
+  padding: 1rem 1.25rem;
+}
+
+.picked-info {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.picked-name {
+  font-weight: 700;
+  font-size: 1.05rem;
+  color: var(--foreground);
+}
+
+.picked-cat {
+  background: rgba(224, 86, 36, 0.1);
+  color: var(--primary);
+  font-size: 0.78rem;
+  padding: 0.2rem 0.55rem;
+  border-radius: 9999px;
+  font-weight: 600;
+}
+
+.btn-change-picked {
+  background: none;
+  border: 1px solid var(--border, #e2e8f0);
+  border-radius: 8px;
+  padding: 0.4rem 0.8rem;
+  color: var(--muted-foreground);
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.btn-change-picked:hover {
+  background: #fee2e2;
+  color: #dc2626;
+  border-color: #fca5a5;
+}
+
+/* New product fields */
+.new-product-fields {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  padding-top: 0.5rem;
+}
+
+.field-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+}
+
+.field-group label {
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--foreground);
+}
+
+.field-input {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: 1px solid var(--border, #e2e8f0);
+  border-radius: var(--radius, 10px);
+  font-size: 0.95rem;
+  font-family: inherit;
+  background: var(--background, #ffffff);
+  color: var(--foreground);
+  transition: border-color 0.2s, box-shadow 0.2s;
+  box-sizing: border-box;
+}
+
+.field-input:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(224, 86, 36, 0.15);
+}
+
+.field-textarea {
+  resize: vertical;
+  min-height: 80px;
+}
+
+.field-error {
+  border-color: #ef4444 !important;
+}
+
+.error-msg {
+  color: #ef4444;
+  font-size: 0.82rem;
+  font-weight: 500;
+}
+
+.btn-cancel-new {
+  align-self: flex-start;
+  background: none;
+  border: none;
+  color: var(--muted-foreground);
+  font-size: 0.85rem;
+  cursor: pointer;
+  text-decoration: underline;
+  padding: 0.2rem 0;
+}
+
+.btn-cancel-new:hover {
+  color: var(--foreground);
+}
+
+/* Listing fields grid */
+.listing-fields-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.25rem;
+}
+
+@media (max-width: 640px) {
+  .listing-fields-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Server error */
+.server-error {
+  background: #fef2f2;
+  border: 1px solid #fecaca;
+  color: #dc2626;
+  padding: 1rem 1.25rem;
+  border-radius: var(--radius, 10px);
+  font-size: 0.95rem;
+}
+
+/* Form footer */
+.form-footer {
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
+  align-items: center;
+}
+
+.btn-cancel {
+  background: var(--muted, #f1f5f9);
+  color: var(--foreground);
+  border: 1px solid var(--border, #e2e8f0);
+  padding: 0.75rem 1.5rem;
+  border-radius: var(--radius, 10px);
+  font-weight: 600;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.btn-cancel:hover {
+  background: var(--border, #e2e8f0);
+}
+
+.btn-submit {
+  background: var(--primary);
+  color: var(--primary-foreground, #ffffff);
+  border: none;
+  padding: 0.75rem 2rem;
+  border-radius: var(--radius, 10px);
+  font-weight: 700;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: all 0.2s;
+  box-shadow: 0 4px 14px rgba(224, 86, 36, 0.28);
+}
+
+.btn-submit:hover:not(:disabled) {
+  background: var(--primary-hover, #c84618);
+  transform: translateY(-1px);
+}
+
+.btn-submit:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}

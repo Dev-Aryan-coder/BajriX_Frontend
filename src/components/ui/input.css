@@ -1,0 +1,4 @@
+/* Input specific styling */
+input:focus {
+  border-color: var(--primary);
+}
