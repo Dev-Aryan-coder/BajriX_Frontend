@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import { Search, Building2, Layers, Compass, ShieldCheck } from 'lucide-react';
+import { API_BASE } from '../../lib/apiBase';
 import './HomePage.css';
 
 /**
@@ -26,7 +27,7 @@ export default function HomePage() {
       setLoading(true);
       setError(null);
       
-      const response = await axios.get('http://localhost:8080/api/v1/products', {
+      const response = await axios.get(`${API_BASE}/products`, {
         params: {
           search: search || undefined,
           category: category || undefined,
@@ -40,7 +41,7 @@ export default function HomePage() {
       }
     } catch (err) {
       console.error('Error fetching products from backend:', err);
-      setError('Could not connect to Spring Boot backend at http://localhost:8080. Ensure the backend is running.');
+      setError('Could not connect to Spring Boot backend. Ensure the backend server is running.');
     } finally {
       setLoading(false);
     }

@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { NavLink, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import { KeyRound, Mail, ArrowRight, ArrowLeft, CheckCircle2, AlertCircle } from 'lucide-react';
+import { API_BASE } from '../../lib/apiBase';
 import './ForgotPasswordPage.css';
 
 export default function ForgotPasswordPage() {
@@ -20,7 +21,7 @@ export default function ForgotPasswordPage() {
     setLoading(true);
 
     try {
-      const response = await axios.post('http://localhost:8080/api/v1/auth/forgot-password', {
+      const response = await axios.post(`${API_BASE}/auth/forgot-password`, {
         email: email.trim(),
       });
 
@@ -35,7 +36,7 @@ export default function ForgotPasswordPage() {
       if (err.response && err.response.data && err.response.data.message) {
         setErrorMessage(err.response.data.message);
       } else {
-        setErrorMessage('Cannot reach auth service at http://localhost:8080. Please ensure backend is running.');
+        setErrorMessage('Cannot reach auth service. Please ensure backend server is running.');
       }
     } finally {
       setLoading(false);

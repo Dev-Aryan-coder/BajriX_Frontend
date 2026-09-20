@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import axios from 'axios';
+import { API_BASE } from '../../lib/apiBase';
 import './ProductDetailPage.css';
 
 export default function ProductDetailPage() {
@@ -20,7 +21,7 @@ export default function ProductDetailPage() {
     setLoading(true);
     setError('');
     try {
-      const res = await axios.get(`http://localhost:8080/api/v1/products/${id}`);
+      const res = await axios.get(`${API_BASE}/products/${id}`);
       const detail = res.data.data;
       setProduct(detail);
       // listings come nested in the product detail response as sellerListings

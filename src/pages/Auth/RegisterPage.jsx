@@ -6,6 +6,7 @@ import { Card, CardHeader, CardTitle, CardDescription, CardContent, CardFooter }
 import { Input } from '../../components/ui/input';
 import { Button } from '../../components/ui/button';
 import { Badge } from '../../components/ui/badge';
+import { API_BASE } from '../../lib/apiBase';
 import './RegisterPage.css';
 
 /**
@@ -13,8 +14,9 @@ import './RegisterPage.css';
  * 
  * Built with:
  * - shadcn/ui components (Card, Input, Button, Badge)
- * - Axios for direct REST API communication to Spring Boot `/api/v1/auth/register`
- * - Explains the PENDING approval lifecycle per PRD requirements
+ * - Axios for direct REST API communication to Spring Boot (/api/v1/auth/register)
+ * - Assigns returned session token to localStorage for immediate authorization
+ * - Account defaults to PENDING status
  */
 export default function RegisterPage() {
   const navigate = useNavigate();
@@ -34,8 +36,9 @@ export default function RegisterPage() {
     setErrorMessage('');
     setSuccessMessage('');
 
+    // Client-side password matching validation
     if (formData.password !== formData.confirmPassword) {
-      setErrorMessage('Passwords do not match. Please re-enter.');
+      setErrorMessage('Passwords do not match. Please verify.');
       return;
     }
 
@@ -48,7 +51,7 @@ export default function RegisterPage() {
 
     try {
       // Connect to real Spring Boot REST API
-      const response = await axios.post('http://localhost:8080/api/v1/auth/register', {
+      const response = await axios.post(`${API_BASE}/auth/register`, {
         name: formData.name.trim(),
         email: formData.email.trim(),
         password: formData.password,
@@ -64,7 +67,7 @@ export default function RegisterPage() {
         setSuccessMessage(`Registration successful! Your store '${seller.name}' has been created with status PENDING. Redirecting...`);
 
         setTimeout(() => {
-          navigate('/');
+          navigate('/seller/dashboard');
         }, 1500);
       }
     } catch (err) {
@@ -72,7 +75,7 @@ export default function RegisterPage() {
       if (err.response && err.response.data && err.response.data.message) {
         setErrorMessage(err.response.data.message);
       } else {
-        setErrorMessage('Cannot connect to Spring Boot API at http://localhost:8080. Please ensure backend is running.');
+        setErrorMessage('Cannot connect to Spring Boot API. Please ensure backend server is running.');
       }
     } finally {
       setLoading(false);

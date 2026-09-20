@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { NavLink, useNavigate, useSearchParams } from 'react-router-dom';
 import axios from 'axios';
 import { ShieldCheck, Lock, ArrowLeft, CheckCircle2, AlertCircle } from 'lucide-react';
+import { API_BASE } from '../../lib/apiBase';
 import './ResetPasswordPage.css';
 
 export default function ResetPasswordPage() {
@@ -45,7 +46,7 @@ export default function ResetPasswordPage() {
     setLoading(true);
 
     try {
-      const response = await axios.post('http://localhost:8080/api/v1/auth/reset-password', {
+      const response = await axios.post(`${API_BASE}/auth/reset-password`, {
         token: token.trim(),
         newPassword: password,
       });

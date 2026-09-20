@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
+import { API_BASE } from '../../lib/apiBase';
 import './SellerDashboardPage.css';
 
 export default function SellerDashboardPage() {
@@ -31,7 +32,7 @@ export default function SellerDashboardPage() {
     setError('');
     try {
       const res = await axios.get(
-        `http://localhost:8080/api/v1/sellers/${seller.id}/listings`,
+        `${API_BASE}/sellers/${seller.id}/listings`,
         {
           params: { page, size: 20 },
           headers: { 'X-Session-Token': sessionToken },
@@ -59,7 +60,7 @@ export default function SellerDashboardPage() {
     try {
       const newActive = !listing.isActive;
       await axios.patch(
-        `http://localhost:8080/api/v1/sellers/${seller.id}/listings/${listing.id}/status`,
+        `${API_BASE}/sellers/${seller.id}/listings/${listing.id}/status`,
         null,
         {
           params: { active: newActive },

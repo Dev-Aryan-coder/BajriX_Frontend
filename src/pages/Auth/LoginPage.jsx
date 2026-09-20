@@ -6,6 +6,7 @@ import { Card, CardHeader, CardTitle, CardDescription, CardContent, CardFooter }
 import { Input } from '../../components/ui/input';
 import { Button } from '../../components/ui/button';
 import { Badge } from '../../components/ui/badge';
+import { API_BASE } from '../../lib/apiBase';
 import './LoginPage.css';
 
 /**
@@ -13,8 +14,8 @@ import './LoginPage.css';
  * 
  * Built with:
  * - shadcn/ui components (Card, Input, Button, Badge)
- * - Axios for direct REST API communication to Spring Boot `/api/v1/auth/login`
- * - Saves the returned session wristband token for genuine authorization
+ * - Axios for real-time authentication to Spring Boot (/api/v1/auth/login)
+ * - Persistent seller wristband token stored in localStorage
  */
 export default function LoginPage() {
   const navigate = useNavigate();
@@ -33,7 +34,7 @@ export default function LoginPage() {
 
     try {
       // Connect to real Spring Boot REST API
-      const response = await axios.post('http://localhost:8080/api/v1/auth/login', {
+      const response = await axios.post(`${API_BASE}/auth/login`, {
         email: email.trim(),
         password: password,
       });
@@ -57,7 +58,7 @@ export default function LoginPage() {
       if (err.response && err.response.data && err.response.data.message) {
         setErrorMessage(err.response.data.message);
       } else {
-        setErrorMessage('Cannot connect to Spring Boot API at http://localhost:8080. Please ensure backend is running.');
+        setErrorMessage('Cannot connect to Spring Boot API. Please ensure backend server is running.');
       }
     } finally {
       setLoading(false);

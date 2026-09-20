@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate, useSearchParams } from 'react-router-dom';
 import axios from 'axios';
+import { API_BASE } from '../../lib/apiBase';
 import './ProductListPage.css';
 
 // Categories that match what's in the DB — just shortcuts for the buyer
@@ -35,7 +36,7 @@ export default function ProductListPage() {
       params.page = searchParams.get('page') || 0;
       params.size = 12;
 
-      const res = await axios.get('http://localhost:8080/api/v1/products', { params });
+      const res = await axios.get(`${API_BASE}/products`, { params });
       const pageData = res.data.data;
       setProducts(pageData.content || []);
       setPagination({

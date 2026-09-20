@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
+import { API_BASE } from '../../lib/apiBase';
 import './AddListingPage.css';
 
 const CATEGORIES = ['Cement', 'Bricks', 'Tiles', 'Steel', 'Sand', 'Aggregates', 'Wood', 'Paint'];
@@ -47,7 +48,7 @@ export default function AddListingPage() {
     clearTimeout(debounceRef.current);
     debounceRef.current = setTimeout(async () => {
       try {
-        const res = await axios.get('http://localhost:8080/api/v1/products/autocomplete', {
+        const res = await axios.get(`${API_BASE}/products/autocomplete`, {
           params: { query: searchQuery },
         });
         setSuggestions(res.data.data || []);
@@ -106,7 +107,7 @@ export default function AddListingPage() {
 
     try {
       await axios.post(
-        `http://localhost:8080/api/v1/sellers/${seller.id}/listings`,
+        `${API_BASE}/sellers/${seller.id}/listings`,
         body,
         { headers: { 'X-Session-Token': sessionToken } }
       );

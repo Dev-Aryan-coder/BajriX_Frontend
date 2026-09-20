@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate, useLocation } from 'react-router-dom';
 import axios from 'axios';
+import { API_BASE } from '../../lib/apiBase';
 import './EditListingPage.css';
 
 export default function EditListingPage() {
@@ -56,7 +57,7 @@ export default function EditListingPage() {
     setConcurrencyConflict(false);
     try {
       const res = await axios.get(
-        `http://localhost:8080/api/v1/sellers/${seller.id}/listings`,
+        `${API_BASE}/sellers/${seller.id}/listings`,
         {
           params: { page: 0, size: 100 },
           headers: { 'X-Session-Token': sessionToken },
@@ -126,7 +127,7 @@ export default function EditListingPage() {
 
     try {
       const res = await axios.put(
-        `http://localhost:8080/api/v1/sellers/${seller.id}/listings/${id}`,
+        `${API_BASE}/sellers/${seller.id}/listings/${id}`,
         payload,
         {
           headers: { 'X-Session-Token': sessionToken },
