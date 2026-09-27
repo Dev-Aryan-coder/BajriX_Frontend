@@ -160,18 +160,23 @@ export default function AddListingPage() {
             {/* Autocomplete dropdown */}
             {suggestions.length > 0 && !selectedProduct && (
               <div className="autocomplete-dropdown">
+                <div className="autocomplete-header">Matching Catalogue Products:</div>
                 {suggestions.map((p) => (
                   <div
                     key={p.id}
                     className="autocomplete-item"
                     onClick={() => handlePickProduct(p)}
                   >
-                    <span className="ac-name">{p.name}</span>
+                    <div className="ac-left">
+                      <span className="ac-bullet">📦</span>
+                      <span className="ac-name">{p.name}</span>
+                    </div>
                     <span className="ac-cat">{p.category}</span>
                   </div>
                 ))}
                 <div className="autocomplete-create" onClick={handleCreateNew}>
-                  + Create new product "{searchQuery}"
+                  <span className="ac-create-icon">+</span>
+                  <span>Create new product <strong>"{searchQuery}"</strong></span>
                 </div>
               </div>
             )}
@@ -179,7 +184,7 @@ export default function AddListingPage() {
             {/* No matches — create new */}
             {searchQuery.length >= 2 && suggestions.length === 0 && !selectedProduct && !isNewProduct && (
               <button type="button" className="btn-create-new" onClick={handleCreateNew}>
-                + Create new product "{searchQuery}"
+                <span className="ac-create-icon">+</span> Create new product "{searchQuery}"
               </button>
             )}
           </div>
@@ -187,9 +192,19 @@ export default function AddListingPage() {
           {/* Selected product chip */}
           {selectedProduct && (
             <div className="selected-product-chip">
-              <span>✓ {selectedProduct.name}</span>
-              <span className="chip-cat">{selectedProduct.category}</span>
-              <button type="button" onClick={() => { setSelectedProduct(null); setSearchQuery(''); }}>✕</button>
+              <div className="chip-left">
+                <span className="chip-icon">✓</span>
+                <span className="chip-name">{selectedProduct.name}</span>
+                <span className="chip-cat">{selectedProduct.category}</span>
+              </div>
+              <button
+                type="button"
+                className="chip-remove-btn"
+                title="Change product"
+                onClick={() => { setSelectedProduct(null); setSearchQuery(''); }}
+              >
+                ✕ Change
+              </button>
             </div>
           )}
 
