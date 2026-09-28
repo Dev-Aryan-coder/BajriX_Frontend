@@ -50,7 +50,11 @@ export default function LoginPage() {
         
         // Brief delay so user sees confirmation before navigating
         setTimeout(() => {
-          navigate('/seller/dashboard');
+          if (seller.role === 'ROLE_ADMIN') {
+            navigate('/admin');
+          } else {
+            navigate('/seller/dashboard');
+          }
         }, 1000);
       }
     } catch (err) {

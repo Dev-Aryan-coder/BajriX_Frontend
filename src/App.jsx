@@ -15,6 +15,7 @@ import LoginPage from './pages/Auth/LoginPage';
 import RegisterPage from './pages/Auth/RegisterPage';
 import ForgotPasswordPage from './pages/Auth/ForgotPasswordPage';
 import ResetPasswordPage from './pages/Auth/ResetPasswordPage';
+import AdminDashboardPage from './pages/Admin/AdminDashboardPage';
 import './App.css';
 
 /**
@@ -51,6 +52,9 @@ function App() {
             <Route path="/seller/forgot-password" element={<ForgotPasswordPage />} />
             <Route path="/reset-password" element={<ResetPasswordPage />} />
             <Route path="/seller/reset-password" element={<ResetPasswordPage />} />
+
+            {/* Admin Console */}
+            <Route path="/admin" element={<AdminDashboardPage />} />
           </Routes>
         </main>
         <Footer />
